@@ -5,12 +5,18 @@ import './App.css'
 import Header from './Functional_comp.js/Header'
 import MainContent from './Functional_comp.js/MainContent'
 import Footer from './Functional_comp.js/Footer'
+import UserProfile from './Functional_comp.js/UserProfile'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+     <div>
+      <UserProfile name="ruth" age="24" bio="DO HARD THING" />
+    </div>
+  );
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
