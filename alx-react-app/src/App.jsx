@@ -2,11 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Header from './Functional_comp.js/Header'
-import MainContent from './Functional_comp.js/MainContent'
-import Footer from './Functional_comp.js/Footer'
+import Header from './Header'
+import MainContent from './MainContent'
+import Footer from './Footer'
 import UserProfile from './Functional_comp.js/UserProfile'
-import welcomeMessage from './components/WelcomeMessage'
+import WelcomeMessage from './components/WelcomeMessage'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -14,6 +14,7 @@ function App() {
     <>
      <div>
       <UserProfile name="ruth" age="24" bio="DO HARD THING" />
+      
     </div>
   ;
 
@@ -30,7 +31,7 @@ function App() {
         <Header/>
         <MainContent/>
         <Footer/>
-        <welcomeMessage/>
+        <WelcomeMessage/>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
