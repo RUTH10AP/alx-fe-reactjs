@@ -6,7 +6,7 @@ import Header from './Functional_comp.js/Header'
 import MainContent from './Functional_comp.js/MainContent'
 import Footer from './Functional_comp.js/Footer'
 import UserProfile from './Functional_comp.js/UserProfile'
-import welcomeMessage from './Functional_comp.js/WelcomeMessage'
+import welcomeMessage from './components/WelcomeMessage'
 function App() {
   const [count, setCount] = useState(0)
 
