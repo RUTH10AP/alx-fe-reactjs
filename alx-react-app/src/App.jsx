@@ -6,7 +6,7 @@ import Header from './Functional_comp.js/Header'
 import MainContent from './Functional_comp.js/MainContent'
 import Footer from './Functional_comp.js/Footer'
 import UserProfile from './Functional_comp.js/UserProfile'
-
+import welcomeMessage from './Functional_comp.js/WelcomeMessage'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,7 +15,7 @@ function App() {
      <div>
       <UserProfile name="ruth" age="24" bio="DO HARD THING" />
     </div>
-  );
+  ;
 
       <div>
         <a href="https://vite.dev" target="_blank">
@@ -30,6 +30,7 @@ function App() {
         <Header/>
         <MainContent/>
         <Footer/>
+        <welcomeMessage/>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
