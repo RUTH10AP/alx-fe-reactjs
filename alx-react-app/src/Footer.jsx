@@ -4,7 +4,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer>
-      <p>@ruthwonde8@gmail.com</p>
+      <p>© 2023 City Lovers</p>
     </footer>
   );
 }

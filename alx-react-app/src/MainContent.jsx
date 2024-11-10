@@ -4,7 +4,7 @@ import React from 'react';
 function MainContent() {
   return (
     <main>
-      <p>do hard thing</p>
+      <p>I love to visit New York, Paris, and Tokyo.</p>
     </main>
   );
 }
