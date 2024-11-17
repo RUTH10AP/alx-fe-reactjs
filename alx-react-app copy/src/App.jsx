@@ -4,15 +4,6 @@ import MainContent from './MainContent';
 import Footer from './Footer';
 import UserProfile from './components/UserProfile';
 import Counter from '../../alx-react-app-new/ALX-react-app-new/src/components/Counter';
-import ProfilePage from './ProfilePage';
-
-function App() {
-  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
-
-  return <ProfilePage userData={userData} />;
-}
-
-export default App;
 
 function App() {
   return (
