@@ -1,64 +1,56 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-
-  const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { username, email, password } = formData;
-
+    setError(''); // Clear previous errors
     if (!username || !email || !password) {
-      setError("All fields are required!");
+      setError('All fields are required.');
       return;
     }
-
-    setError("");
-    console.log("Form submitted successfully", formData);
-    // Mock API simulation
-    alert("Form submitted!");
+    // Simulate API call (replace with actual API call)
+    console.log('Submitting:', { username, email, password });
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <h1>Registration</h1>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <div>
-        <label>Username:</label>
+        <label htmlFor="username">Username:</label>
         <input
           type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
         />
       </div>
       <div>
-        <label>Email:</label>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
         />
       </div>
       <div>
-        <label>Password:</label>
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
         />
       </div>
-      {error && <p style={{ color: "red" }}>{error}</p>}
       <button type="submit">Register</button>
     </form>
   );
