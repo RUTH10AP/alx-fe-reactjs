@@ -1,59 +1,82 @@
 import React, { useState } from 'react';
 
 const RegistrationForm = () => {
+  // Define state for the form fields
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [error, setErrors] = useState('');
+  const iff= ["if (!email)", "if (!password)"];
+  if(!email)  {
+    setErrors('Password fields are required');
 
+   }
+   if(!password){
+          setErrors('Password fields are required');
+
+   }
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError(''); // Clear previous errors
-    if (!username || !email || !password) {
-      setError('All fields are required.');
-      return;
+
+    // Simple validation to check if any field is empty
+    // if (!username) {
+    //   setError('UserName fields are required');
+    // }
+    if(!email)  {
+     setErrors('Password fields are required');
+
     }
-    // Simulate API call (replace with actual API call)
-    console.log('Submitting:', { username, email, password });
+    if(!password){
+           setErrors('Password fields are required');
+
+    }
+
+     
+    
+    //  else {
+    //   setError('');
+    //   // Form submission logic here (like sending data to an API)
+    //   console.log('Form submitted:', { username, email, password });
+    // }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Registration</h1>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
       <div>
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="username">Username</label>
         <input
           type="text"
           id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          required
         />
       </div>
+
       <div>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
         />
       </div>
+
       <div>
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
         />
       </div>
-      <button type="submit">Register</button>
+
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+
+      <button type="submit">Submit</button>
     </form>
   );
 };
-
 export default RegistrationForm;
