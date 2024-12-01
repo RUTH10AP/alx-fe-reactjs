@@ -8,10 +8,11 @@ export default {
 }
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"], // Specify where Tailwind should scan for class usage
   theme: {
-    extend: {},
+    extend: {}, // Extend or customize the default theme here
   },
-  plugins: [],
+  plugins: [], // Add plugins if needed
 };
+
 
