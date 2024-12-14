@@ -1,19 +1,12 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_GITHUB_API_URL;
-const TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+const BASE_URL = "https://api.github.com/search/users";
 
-const fetchUserData = async (username) => {
-  try {
-    const response = await axios.get(`${BASE_URL}/users/${username}`, {
-      headers: {
-        Authorization: `token ${TOKEN}`,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    throw new Error('Error fetching user data');
-  }
+export const searchGitHubUsers = async ({ username, location, minRepos }) => {
+  let query = `q=${username}`;
+  if (location) query += `+location:${location}`;
+  if (minRepos) query += `+repos:>=${minRepos}`;
+  
+  const response = await axios.get(`${BASE_URL}?${query}`);
+  return response.data;
 };
-
-export default fetchUserData;
